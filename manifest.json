@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Lock Button",
+  "version": "1.0",
+  "description": "Prevent accidental touches while watching YouTube in multitask mode",
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "action": {
+    "default_title": "Toggle Lock",
+    "default_icon": "padlock.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["lock-style.css"]
+    }
+  ]
+}
